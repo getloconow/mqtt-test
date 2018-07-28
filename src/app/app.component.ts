@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
       this.messages.unshift(this.message)
 
     })
-    this.mqtt.unsafePublish("messages", `hello from ${parseInt((Math.random() * 100000).toString()}`, { qos: 2, retain: true })
+    this.mqtt.unsafePublish("messages", `hello from ${parseInt((Math.random() * 100000).toString())}`, { qos: 2, retain: true })
 
   }
   title = 'app';
