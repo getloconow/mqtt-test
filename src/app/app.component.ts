@@ -10,6 +10,12 @@ import { MqttService } from 'ngx-mqtt';
 export class AppComponent implements OnInit {
   message = ""
   messages = []
+  states = {
+    0: 'disconnected',
+    1: "connecting",
+    2: "connected"
+  }
+  state = null
   constructor(private mqtt: MqttService) {
     this.mqtt.observe('messages').subscribe(e => {
       document.title = e.payload.toString()
@@ -20,6 +26,10 @@ export class AppComponent implements OnInit {
     })
     this.mqtt.publish("messages", `hello from ${parseInt((Math.random() * 100000).toString())}`, { qos: 2, retain: true, }).subscribe(e => {
       console.log(e)
+    })
+
+    this.mqtt.state.subscribe(e => {
+      this.state = e
     })
 
   }

@@ -1,5 +1,6 @@
 a(href="/") home
 br
 input([(ngModel)] = "value", (keypress)="checkAndsendIfEnterPressed($event)")
+span {{ states[state] }}
 ul
     li(*ngFor="let message of messages") {{ message }}

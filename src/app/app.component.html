@@ -1,5 +1,5 @@
 <a href="/">home</a><br>
-<input [(ngModel)]="value" (keypress)="checkAndsendIfEnterPressed($event)">
+<input [(ngModel)]="value" (keypress)="checkAndsendIfEnterPressed($event)"><span>{{ states[state] }}</span>
 <ul>
   <li *ngFor="let message of messages">{{ message }}</li>
 </ul>
