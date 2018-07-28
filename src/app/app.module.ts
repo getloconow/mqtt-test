@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: '159.89.175.3',
   port: 9001,
-  path: ""
+  path: "",
+  clean: false
 }
 @NgModule({
   declarations: [
